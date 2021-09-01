@@ -1,1 +1,108 @@
+namespace Calculadora
+{
+    public partial class frmCalculadora : Form
+    {
+        public frmCalculadora()
+        {
+            InitializeComponent();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdSuma_Click(object sender, EventArgs e)
+        {
+            float ViA = 0, VjA = 0, VkA = 0, ViB = 0, VjB = 0, VkB = 0, ViF, VjF, VkF;
+
+            txtRes.Clear();
+            lblRes.Text = "";
+
+            //Asignacion de variables
+            ViA = Single.Parse(txtViA.Text);
+            VjA = Single.Parse(txtVjA.Text);
+            VkA = Single.Parse(txtVkA.Text);
+            ViB = Single.Parse(txtViB.Text);
+            VjB = Single.Parse(txtVjB.Text);
+            VkB = Single.Parse(txtVkB.Text);
+
+            //Calculo
+            ViF = ViA + ViB;
+            VjF = VjA + VjB;
+            VkF = VkA + VkB;
+
+            //Resutlados
+            txtRes.Text = ViF.ToString() +"i; "+ VjF.ToString() +"j; "+ VkF.ToString()+"k";
+            lblRes.Text = "Resultado de suma";
+        }
+
+        private void cmdResta_Click(object sender, EventArgs e)
+        {
+            float ViA = 0, VjA = 0, VkA = 0, ViB = 0, VjB = 0, VkB = 0, ViF, VjF, VkF;
+
+            txtRes.Clear();
+            lblRes.Text = "";
+
+            //Asignacion de variables
+            ViA = Single.Parse(txtViA.Text);
+            VjA = Single.Parse(txtVjA.Text);
+            VkA = Single.Parse(txtVkA.Text);
+            ViB = Single.Parse(txtViB.Text);
+            VjB = Single.Parse(txtVjB.Text);
+            VkB = Single.Parse(txtVkB.Text);
+
+            //Calculo
+            ViF = ViA - ViB;
+            VjF = VjA - VjB;
+            VkF = VkA - VkB;
+
+            //Resutlados
+            txtRes.Text = ViF.ToString() + "i; " + VjF.ToString() + "j; " + VkF.ToString() + "k";
+            lblRes.Text = "Resultado de resta";
+        }
+
+        private void cmdEscalar_Click(object sender, EventArgs e)
+        {
+            float ViA = 0, VjA = 0, VkA = 0, ViB = 0, VjB = 0, VkB = 0, ViF, VjF, VkF, VF;
+
+            txtRes.Clear();
+            lblRes.Text = "";
+
+            //Asignacion de variables
+            ViA = Single.Parse(txtViA.Text);
+            VjA = Single.Parse(txtVjA.Text);
+            VkA = Single.Parse(txtVkA.Text);
+            ViB = Single.Parse(txtViB.Text);
+            VjB = Single.Parse(txtVjB.Text);
+            VkB = Single.Parse(txtVkB.Text);
+
+            //Calculo
+            ViF = ViA * ViB;
+            VjF = VjA * VjB;
+            VkF = VkA * VkB;
+            VF = ViF + VjF + VkF;
+
+            //Resutlados
+            txtRes.Text = VF.ToString();
+            lblRes.Text = "Resultado del escalar";
+        }
+
+        private void cmdBorrar_Click(object sender, EventArgs e)
+        {
+            txtRes.Clear();
+            txtViA.Clear();
+            txtViB.Clear();
+            txtVjA.Clear();
+            txtVjB.Clear();
+            txtVkA.Clear();
+            txtVkB.Clear();
+            lblRes.Text = "";
+        }
+
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+}
